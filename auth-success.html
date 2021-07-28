@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+    <script src="https://trello.com/power-ups/power-up.min.js"></script>
+  </head>
+  <body>
+    <h1 style="text-align:center">You're set!</h1>
+    <p style="text-align:center">This window should close automatically. If it doesn't, go ahead and close it.</p>
+    <script>
+      var token = window.location.hash.substring(7);
+      if (window.opener) {
+        window.opener.authorize(token);
+      } else {
+        localStorage.setItem('token', token);
+      }
+      setTimeout(function(){ window.close(); }, 100);
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1858235-24', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
